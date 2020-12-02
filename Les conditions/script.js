@@ -153,3 +153,8 @@ var marc = {
     // }
 
     console.log(marc.age >= 18 ? 'Tu es majeur' : 'Tu es mineur')
+
+    //Test 
+    // if(null) {
+    //     console.log('false')
+    // }
