@@ -10,15 +10,15 @@
 */
 
 // initialisation de notre varaible 
-    // let x = 0;
+    let x = 0;
 
-    // // tant que
-    // while(x < 10) {
-    //     //on exécute le code 
-    //     document.getElementById("p1").innerHTML += 'x stocke la valeur ' + x + ' lors du passage n°' + (x + 1) + ' dans la boucle<br>';
+    // tant que
+    while(x < 10) {
+        //on exécute le code 
+        document.getElementById("p1").innerHTML += 'x stocke la valeur ' + x + ' lors du passage n°' + (x + 1) + ' dans la boucle<br>';
 
-    //     x++
-    // }
+        x++
+    }
 
 /*
     Exemple 2 - do... while
@@ -55,7 +55,29 @@
     Exemple 3 - boucle for
 */
 
-for(let i = 0; i < 10; i++) {
-    document.getElementById('p1').innerHTML += 'i stocke la valeur ' + i + ' lors du passage n°' + (i + 1) + ' dans la boucle<br>';
-}
+    // for(let i = 0; i < 10; i++) {
+    //     document.getElementById('p1').innerHTML += 'i stocke la valeur ' + i + ' lors du passage n°' + (i + 1) + ' dans la boucle<br>';
+    // }
 
+/* 
+    Exemple 4 - utiliser une instruction continue pour passer directement à l'itération suivante d'une boucle
+*/
+
+    // for(let i = 0; i < 10; i++){
+    //     //Si i/2 possède un reste alors i est impair
+    //     if(i % 2 != 0){
+    //         continue;
+    //     }
+    //     document.getElementById('p1').innerHTML += 'i stocke la valeur ' + i + ' lors du passage n°' + (i + 1) + ' dans la boucle <br>';
+    // }
+
+/*
+    Exemple 5 - Utiliser une instruction break pour sortir prématurément d'une boucle
+*/
+
+    // for(let i = 0; i < 1000; i++) {
+    //     if(i == 21) {
+    //        break;
+    //     }
+    //     document.getElementById('p1').innerHTML += 'i stocke la valeur ' + i + ' lors du passage n°' + (i + 1) + ' dans la boucle<br>';
+    // }
