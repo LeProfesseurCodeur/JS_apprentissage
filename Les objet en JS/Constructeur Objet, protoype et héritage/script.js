@@ -5,7 +5,7 @@
 // Exemple précédent
 
 //Utilisateur() est une fonction constructeur
-    /*function Utilisateur(n, a, m){
+    function Utilisateur(n, a, m){
         this.nom = n;
         this.age = a;
         this.mail = m;
@@ -17,7 +17,7 @@
 
     // Crée deux objects pierre et mathilde en utilisant le constructeur
     let pierre = new Utilisateur(['Pierre', 'Giraud'], 29, 'test@gmail.com');
-    let mathilde = new Utilisateur(['Mathilde', 'test'], 44, 'test2@gmail.com');*/
+    let mathilde = new Utilisateur(['Mathilde', 'test'], 44, 'test2@gmail.com');
 
 //Ici, on commence par définir une fonction constructeur puis on crée deux variables qui vont stocker deux objets créés à partir de ce constructeur. 
 //En procédant comme cela, chaque objet va disposer de sa propre copie des propriétés et méthodes du constructeur ce qui signifie que chaque objet créer va posséder trois propriétés nom, age et mail et une méthode bonjour() qui va lui appartenir.
@@ -25,7 +25,7 @@
 // Sous forme littéral voir ci-dessous :
 
 //On crée deux objets littéraux 
-    /*let pierre = {
+    let pierre = {
         nom : ['Pierre', 'Giraud'],
         age : 29,
         mail : 'pierre.giraud@gmail.com',
@@ -41,7 +41,7 @@
         bonjour : function(){
             alert('Bonjour, je suis ' + this.nom[0] + 'j\'ai ' + this.age + ' ans');
         }
-    }*/
+    }
 
 /**
  *  L’un des enjeux principaux en tant que développeurs doit toujours être la performance de nos codes. 
