@@ -103,15 +103,211 @@
 
 // Exemple 2
 
-let b1 = document.getElementById('b1'); //On accède au bouton #b1
-let winSize = 'width=500, height=500';
+    // let b1 = document.getElementById('b1'); //On accède au bouton #b1
+    // let winSize = 'width=500, height=500';
 
-/*Nous verrons addEventListener() plus tard dans ce cours. Ici, on l'utilise pour
- *exécuter openWindow() dès qu'un utilisateur clique sur #b1*/
-b1.addEventListener('click', openWindow);
+    // /*Nous verrons addEventListener() plus tard dans ce cours. Ici, on l'utilise pour
+    //  *exécuter openWindow() dès qu'un utilisateur clique sur #b1*/
+    // b1.addEventListener('click', openWindow);
 
-//On définit notre fonction openWindow()
-function openWindow(){
-    //On recupère l'information renvoyée par open() dans une variable "fenetre"
-    fenetre = window.open('https://www.codepen.io', '', winSize);
+    // //On définit notre fonction openWindow()
+    // function openWindow(){
+    //     //On recupère l'information renvoyée par open() dans une variable "fenetre"
+    //     fenetre = window.open('https://www.codepen.io', '', winSize);
+    // }
+
+/**
+ * on utilise dans le code ci-dessus une notion qu'on n'a pas encore vu : la gestion des évènements avec addEventListener(). Nous étudierons cela plus tard. pour le moment, nous devons simplement avoir une vision générale de ce que fait ce code. 
+ * 
+ * Ici, on commence par récupérer une référence à notre élément HTML button id='b1' pour pouvoir le manipuler en JavaScript. Ensuite, on attache un gestionnaire d’évènement click à ce bouton. L’idée est la suivante : la fonction openWindow() sera exécutée dès qu’une personne clique sur button id='b1'. Finalement, on définit openWindow() qui contient notre méthode open().
+ * On va passer à open() une URL qui devra être chargée dans la nouvelle fenêtre ainsi que la taille de la fenêtre. Ici, on ne donne pas de nom à notre fenêtre.
+ * Une fois une nouvelle fenêtre créée, on va pouvoir la redimensionner en ajoutant ou en enlevant à sa taille actuelle un certain nombre de pixels grâce à la méthode resizeBy() ou en lui passant une nouvelle taille avec resizeTo().
+ * Chacune de ces deux méthodes va prendre deux arguments : une largeur et une hauteur et elles devront être appliquées sur la référence renvoyée par open().
+ */
+
+// Exemple 3 
+// let b1 = document.getElementById('b1');
+// let b2 = document.getElementById('b2');
+// let b3 = document.getElementById('b3');
+// let b4 = document.getElementById('b4');
+// let b5 = document.getElementById('b5');
+// let b6 = document.getElementById('b6');
+// let b7 = document.getElementById('b7');
+// let b8 = document.getElementById('b8'); 
+// let winSize = 'width=500, height=500';
+
+// b1.addEventListener('click', openWindow);
+// b2.addEventListener('click', resizeWindowBy);
+// b3.addEventListener('click', resizeWindowTo);
+
+// function openWindow(){
+//     //On recupère l'information renvoyée par open() dans une variable "fenetre"
+//     fenetre = window.open('', '', winSize);
+// }
+// function resizeWindowBy(){
+//     fenetre.resizeBy(200, 100);
+// }
+// function resizeWindowTo(){
+//     fenetre.resizeTo(960, 720);
+// }
+
+/**
+ * Notez que ces méthodes ne fonctionneront pas dans certains navigateurs lorsque le code est exécuté en local (c’est-à-dire depuis un fichier hébergé sur notre ordinateur) et lorsqu’on tente de redimensionner une fenêtre contenant un vrai site.
+ * En effet, la plupart des navigateurs dont Chrome bloquent ce genre de requêtes considérées comme Cross-origin pour des raisons de sécurité. Pour contourner cette limitation et voir le résultat de ces méthodes, il suffit de ne pas renseigner d’URL dans la méthode open().
+ * 
+ * Nous allons également pouvoir de la même façon déplacer la fenêtre sur un espace de travail avec les méthodes moveBy() qui va déplacer la fenêtre relativement à sa position de départ et moveTo() qui va la déplacer de manière absolue, par rapport à l’angle supérieur gauche de l’espace de travail.
+ * 
+ * Ces deux méthodes vont à nouveau prendre deux arguments qui correspondent au déplacement horizontal et vertical de la fenêtre.
+ */
+
+ // Exemple 4 
+//  let b1 = document.getElementById('b1');
+// let b2 = document.getElementById('b2');
+// let b3 = document.getElementById('b3');
+// let b4 = document.getElementById('b4');
+// let b5 = document.getElementById('b5');
+// let b6 = document.getElementById('b6');
+// let b7 = document.getElementById('b7');
+// let b8 = document.getElementById('b8'); 
+// let winSize = 'width=500, height=500';
+
+// b1.addEventListener('click', openWindow);
+// b2.addEventListener('click', resizeWindowBy);
+// b3.addEventListener('click', resizeWindowTo);
+// b4.addEventListener('click', moveWindowBy);
+// b5.addEventListener('click', moveWindowTo);
+
+// function openWindow(){
+//     //On recupère l'information renvoyée par open() dans une variable "fenetre"
+//     fenetre = window.open('', '', winSize);
+// }
+// function resizeWindowBy(){
+//     fenetre.resizeBy(200, 100);
+// }
+// function resizeWindowTo(){
+//     fenetre.resizeTo(960, 720);
+// }
+// function moveWindowBy(){
+//     fenetre.moveBy(100, 100);//Déplace la fenêtre 100px à droite et 100px en bas
+// }
+// function moveWindowTo(){
+//     fenetre.moveTo(0, 0);//Place la fenêtre contre le bord supérieur gauche
+// }
+
+/**
+ * De la même manière et pour les mêmes raisons que pour les méthodes précédentes, ces méthodes ne s’exécuteront pas dans certains navigateurs lors d’une exécution en local sur une fenêtre contenant un site.
+ * On va encore pourvoir faire défiler le document dans la fenêtre ouverte de manière relative ou absolue en utilisant les méthodes scrollBy() et scrollTo() qui vont prendre en argument le défilement horizontal et vertical à appliquer au document dans la fenêtre.
+ * Bien évidemment, pour que ces deux méthodes aient un effet, il faut que le document soit plus grand que la fenêtre qui le contient c’est-à-dire qu’il y ait une barre de défilement dans celui-ci.
+ */
+
+// Exemple 5
+// let b1 = document.getElementById('b1');
+// let b2 = document.getElementById('b2');
+// let b3 = document.getElementById('b3');
+// let b4 = document.getElementById('b4');
+// let b5 = document.getElementById('b5');
+// let b6 = document.getElementById('b6');
+// let b7 = document.getElementById('b7');
+// let b8 = document.getElementById('b8'); 
+// let winSize = 'width=500, height=500';
+
+// b1.addEventListener('click', openWindow);
+// b2.addEventListener('click', resizeWindowBy);
+// b3.addEventListener('click', resizeWindowTo);
+// b4.addEventListener('click', moveWindowBy);
+// b5.addEventListener('click', moveWindowTo);
+// b6.addEventListener('click', scrollWindowBy);
+// b7.addEventListener('click', scrollWindowTo);
+
+// function openWindow(){
+//     //On recupère l'information renvoyée par open() dans une variable "fenetre"
+//     fenetre = window.open('', '', winSize);
+// }
+// function resizeWindowBy(){
+//     fenetre.resizeBy(200, 100);
+// }
+// function resizeWindowTo(){
+//     fenetre.resizeTo(960, 720);
+// }
+// function moveWindowBy(){
+//     fenetre.moveBy(100, 100);//Déplace la fenêtre 100px à droite et 100px en bas
+// }
+// function moveWindowTo(){
+//     fenetre.moveTo(0, 0);//Place la fenêtre contre le bord supérieur gauche
+// }
+// function scrollWindowBy(){
+//     fenetre.scrollBy(0, 200);//Défile de 200px vers le bas
+// }
+// function scrollWindowTo(){
+//     fenetre.scrollTo(0, 0);//Remonte en haut de la page
+// }
+
+/**
+ * Enfin, on va pouvoir fermer une fenêtre avec la méthode close()
+*/ 
+
+// Exemple 6
+
+// let b1 = document.getElementById('b1');
+// let b2 = document.getElementById('b2');
+// let b3 = document.getElementById('b3');
+// let b4 = document.getElementById('b4');
+// let b5 = document.getElementById('b5');
+// let b6 = document.getElementById('b6');
+// let b7 = document.getElementById('b7');
+// let b8 = document.getElementById('b8'); 
+// let winSize = 'width=500, height=500';
+
+// b1.addEventListener('click', openWindow);
+// b2.addEventListener('click', resizeWindowBy);
+// b3.addEventListener('click', resizeWindowTo);
+// b4.addEventListener('click', moveWindowBy);
+// b5.addEventListener('click', moveWindowTo);
+// b6.addEventListener('click', scrollWindowBy);
+// b7.addEventListener('click', scrollWindowTo);
+// b8.addEventListener('click', closeWindow);
+
+// function openWindow(){
+//     //On recupère l'information renvoyée par open() dans une variable "fenetre"
+//     fenetre = window.open('', '', winSize);
+// }
+// function resizeWindowBy(){
+//     fenetre.resizeBy(200, 100);
+// }
+// function resizeWindowTo(){
+//     fenetre.resizeTo(960, 720);
+// }
+// function moveWindowBy(){
+//     fenetre.moveBy(100, 100);//Déplace la fenêtre 100px à droite et 100px en bas
+// }
+// function moveWindowTo(){
+//     fenetre.moveTo(0, 0);//Place la fenêtre contre le bord supérieur gauche
+// }
+// function scrollWindowBy(){
+//     fenetre.scrollBy(0, 200);//Défile de 200px vers le bas
+// }
+// function scrollWindowTo(){
+//     fenetre.scrollTo(0, 0);//Remonte en haut de la page
+// }
+// function closeWindow(){
+//     fenetre.close();
+// }
+
+/**
+ * Afficher des boites de dialogue dans une fenêtre
+ * 
+ * L’objet Window possède également des méthodes qui vont nous permettre d’afficher des boites d’alerte, de dialogue ou de confirmation dans la fenêtre.
+ * 
+ * Nous connaissons déjà bien les fonctions alert() et prompt() qui sont en fait des méthodes de l’objet Window. Comme ces deux méthodes sont très utilisées, et comme l’objet Window est implicite, nous les utiliserons généralement sans préciser window. avant la méthode.
+ * 
+ * Pour rappel, la méthode alert() permet d’afficher une boite d’alerte tandis que prompt() affiche une boite de dialogue permettant aux utilisateurs de nous envoyer du texte.
+ * 
+ * La méthode confirm(), quant-à-elle, ouvre une boite avec un message (facultatif) et deux boutons pour l’utilisateur : un bouton Ok et un bouton Annuler.
+ * 
+ * Si l’utilisateur clique sur « Ok », le booléen true est renvoyé par la fonction ce qui va donc nous permettre d’effectuer des actions en fonction du choix de l’utilisateur.
+ */
+
+// Exemple 7 
+if(confirm("Ouvrir une fenêtre Google ? ")) {
+    fenetre = window.open('https://www.google.com');
 }
